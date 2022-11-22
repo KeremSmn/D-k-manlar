@@ -1,0 +1,242 @@
+////FONKSÝYON ÝLE FAKTORÝYEL
+//#include<stdio.h>
+//int faktoriyel (int n)
+//{
+//	int i,sonuc=1;
+//	for (i=1;i<=n;i++)
+//	{
+//		sonuc*=i;
+//	}
+//	return sonuc;
+//}
+//int main()
+//{
+//	int n;
+//	printf("Faktoriyeli hesaplanacak sayiyi girin:");
+//	scanf("%d",&n);
+//	printf("%d\n",faktoriyel(n));
+//	int sonuc=faktoriyel(n+1);
+//	printf("%d",sonuc);
+//}
+
+////FONKSÝYONA DÝZÝ GÖNDERME
+//#include<stdio.h>
+//int ToplamAl (int dizi[],int t)
+//{
+//	int i,sonuc=0;
+//	for (i=0;i<=t;i++)
+//	{
+//		sonuc+=dizi[i];
+//	}
+//	return sonuc;
+//}
+//int main()
+//{
+//	int dizi[]={1,2,3,4,5};
+//	int t,i;
+//	printf("Kacinci elemanin karesi alinacak?\n");
+//	scanf("%d",&t);
+//	dizi[t]=ToplamAl(dizi,t);
+//	for (i=0;i<5;i++)
+//	{
+//		printf("%d-",dizi[i]);
+//	}
+//}
+
+////FONKSÝYONA DÝZÝ GÖNDERME2
+//#include<stdio.h>
+//int carpim (int arr[])
+//{
+//	int i,carp=1;
+//	for (i=1;i<3;i++)
+//	{
+//		carp*=arr[i];
+//	}
+//	printf("carp: %d\n",carp);
+//	return carp;
+//}
+//int main()
+//{
+//	int dizi[]={1,2,3};
+//	int kare;
+//	kare=carpim(dizi)*carpim(dizi);
+//	printf("Kare:%d\n",kare);
+//	return 0;
+//}
+
+////US ALMA V1
+//#include<stdio.h>
+//int us (int m,int n)
+//{
+//	int i,sonuc=1;
+//	for (i=0;i<n;i++)
+//	{
+//		sonuc*=m;
+//	}
+//	return sonuc;
+//}
+//int main()
+//{
+//	int m,n,sonuc;
+//	printf ("m ve n degerlerini girin");
+//	scanf("%d %d",&m,&n);
+//	sonuc=us(m,n);
+//	printf("islemin sonucu=%d",sonuc);
+//}
+
+////US ALMA V2
+//#include<stdio.h>
+//void us (int m,int n)
+//{
+//	int i,sonuc=1;
+//	for (i=0;i<n;i++)
+//	{
+//		sonuc*=m;
+//	}
+//	printf("islemin sonucu=%d",sonuc);
+//}
+//int main()
+//{
+//	int m,n,sonuc;
+//	printf ("m ve n degerlerini girin");
+//	scanf("%d %d",&m,&n);
+//	us(m,n);	
+//}
+
+////US ALMA V3
+//#include<stdio.h>
+//void us ()
+//{
+//	int m,n,sonuc=1,i;
+//	printf ("m ve n degerlerini girin");
+//	scanf("%d %d",&m,&n);
+//	for (i=0;i<n;i++)
+//	{
+//		sonuc*=m;
+//	}
+//	printf("islemin sonucu=%d",sonuc);
+//	return;
+//}
+//int main()
+//{	
+//	us();	
+//}
+
+
+////PROTOTIP TANIMLAMA
+//#include<stdio.h>
+//int toplam (int,int);
+//
+//int main()
+//{	
+//	int a,b,sonuc;
+//	printf ("Toplami alinacak sayilari girin");
+//	scanf("%d %d",&a,&b);
+//	printf("Toplam sonucu=%d",toplam(a,b));	
+//}
+//
+//int toplam (int a, int b)
+//{
+//	return a+b;
+//}
+
+////KARAKTER SAYILARI ÇARPIMI V1
+//#include<stdio.h>
+//#include<string.h>
+//int karakterSayiCarp (char dizi[], int n)
+//{
+//	int i,carpim=1,sayac;
+//	char c;
+//	for (c='a';c<='z';c++)
+//	{
+//		sayac=0;
+//		for (i=0;i<n;i++)
+//		{
+//			if (dizi[i]==c)
+//				sayac++;
+//		}
+//		if (sayac>0)
+//			carpim*=sayac;
+//	}
+//	return carpim;
+//}
+//
+//int main()
+//{
+//	int n,carpim;
+//	char dizi[100];
+//	printf("Karakter stringini girin:")	;
+//	scanf("%s",dizi);
+//	n=strlen(dizi);
+//	carpim=karakterSayiCarp(dizi,n);
+//	printf("Sonuc=%d",carpim);	
+//}
+
+////KARAKTER SAYILARI ÇARPIMI V2
+//#include<stdio.h>
+//#include<string.h>
+//int karakterSayiCarp(char dizi[],char c)
+//{
+//	int n,i,sayac=0;
+//	n=strlen(dizi);
+//	for (i=0;i<n;i++)
+//	{
+//		if (dizi[i]==c)
+//			sayac++;
+//	}	
+//	return sayac;
+//}
+//
+//int karakterSayiBul (char dizi[])
+//{
+//	int carpim=1,sayac=0;
+//	char c;
+//	for (c='a';c<='z';c++)
+//	{
+//		sayac=karakterSayiCarp(dizi,c);
+//		if (sayac>0)
+//			carpim*=karakterSayiCarp(dizi,c);		
+//	}
+//	return carpim;
+//}
+//int main()
+//{
+//	int carpim;
+//	char dizi[100];
+//	printf("Karakter stringini girin:")	;
+//	scanf("%s",dizi);	
+//	carpim=karakterSayiBul(dizi);
+//	printf("Sonuc=%d",carpim);	
+//}
+
+
+////REKURSIF 1
+//#include<stdio.h>
+//int rekursifToplama(int n)
+//{
+//	if (n==0)
+//		return 0;
+//	return n+rekursifToplama(n-1);
+//}
+//int main()
+//{
+//	int n;
+//	printf("Kaca kadar toplayalim?");
+//	scanf("%d",&n);	
+//	printf("Sonuc=%d",rekursifToplama(n));	
+//}
+
+//REKURSIF 2
+#include<stdio.h>
+int fonk(int a,int b)
+{
+	if (b==0)
+		return 1;
+	return a*fonk(a,b-1);
+}
+int main()
+{	
+	printf("%d-%d",fonk(4,3),fonk(5,0));	
+}
+
+

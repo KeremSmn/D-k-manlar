@@ -1,0 +1,146 @@
+////YAS HESAPLAMA
+//#include <stdio.h>
+//struct TARIH
+//{
+//	int gun,ay,yil;
+//};
+//int main()
+//{
+//	struct TARIH dTarihi,gTarihi;
+//	dTarihi.gun=23;
+//	dTarihi.ay=04;
+//	dTarihi.yil=1986;
+//	gTarihi.gun=30;
+//	gTarihi.ay=12;
+//	gTarihi.yil=2020;
+//	int yas=gTarihi.yil-dTarihi.yil;
+//	printf("Kisinin yasi:%d",yas);
+//}
+
+//* ve . OPERATÖR ÖNCELÝKLERÝ
+//#include <stdio.h>
+//struct DENEME
+//{
+//	char ch;
+//	int n;
+//};
+//struct DENEME x;
+//struct DENEME *p;
+//int main()
+//{	
+//	p=&x;
+//	(*p).ch='a';
+//	(*p).n=5;
+//	printf("%c",x.ch);
+//}
+
+////KÝÞÝ KAYITLARI OLUÞTURMA
+//#include <stdio.h>
+//#include <stdlib.h>
+//struct INSAN {
+//   int yas;
+//   float agirlik;
+//   char adSoyad[30];
+//};
+
+//int main()
+//{
+//   struct INSAN *ptr;
+//   int i, n;
+
+//   printf("Kayit yapilacak kisi sayisini girin");
+//   scanf("%d", &n);
+
+//   // allocating memory for n numbers of struct person
+//   ptr = (struct INSAN*) malloc(n * sizeof(struct INSAN));
+//   
+//   printf("Sirasiyla isim ve yas bilgilerini girin:\n");
+//   for(i = 0; i < n; ++i)
+//   {
+//       printf("%d. kisi\n",i+1);
+//       scanf("%s %d", (ptr+i)->adSoyad, &(ptr+i)->yas);
+//   }
+//   for(i = 0; i < n; ++i)
+//       printf("Ad-Soyad: %s\t Yas: %d\n", (ptr+i)->adSoyad, (ptr+i)->yas);
+
+//   return 0;
+//}
+
+////PARAMETRE OLARAK YAPILAR 1
+//#include <stdio.h>
+//struct TARIH
+//{
+//	int gun,ay,yil;
+//};
+//void tarihGoruntule(struct TARIH x)
+//{
+//	printf("Gun:%d\n",x.gun);
+//	printf("Ay:%d\n",x.ay);
+//	printf("Yýl:%d\n",x.yil);
+//}
+//int main(void)
+//{
+//	struct TARIH n;
+//	n.gun=30;
+//	n.ay=12;
+//	n.yil=2021;
+//	tarihGoruntule(n);
+//}
+
+////PARAMETRE OLARAK YAPILAR 2
+//#include <stdio.h>
+//struct TARIH
+//{
+//	int gun,ay,yil;
+//};
+//void tarihGoruntule(struct TARIH *x)
+//{
+//	printf("Gun:%d\n",(*x).gun);
+//	printf("Ay:%d\n",(*x).ay);
+//	printf("Yýl:%d\n",(*x).yil);
+//}
+//int main(void)
+//{
+//	struct TARIH n;
+//	n.gun=30.;
+//	n.ay=12;
+//	n.yil=2021;
+//	tarihGoruntule(&n);
+//}
+
+//FONKSÝYONDAN YAPI DÖNDERME
+#include <stdio.h>
+#include <stdlib.h>
+struct INSAN {
+   int yas;
+   char adSoyad[30];
+};
+
+struct INSAN bilgiAl()
+{
+	struct INSAN s1;
+	printf("isim girin");
+  	scanf ("%s", s1.adSoyad);
+
+  	printf("Yas girin: ");
+  	scanf("%d", &s1.yas);
+  
+    return s1;
+}
+
+int main()
+{
+    struct INSAN s2;
+	
+    s2 = bilgiAl();
+
+    printf("Ad-Soyad: %s", s2.adSoyad);
+    printf("\nYas: %d", s2.yas);
+    
+    return 0;
+}
+
+
+
+
+

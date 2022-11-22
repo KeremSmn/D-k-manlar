@@ -1,0 +1,179 @@
+////POINTER DEĞERLERİNİN YAZDIRILMASI
+//#include<stdio.h>
+//int main()
+//{
+//	int x=20;
+//	int *ptr;
+//	ptr=&x;
+//	printf("x degiskeninin degeri:%d\n",x);
+//	printf("x degiskeninin degeri:%p\n",&x);
+//	printf("x degiskeninin adresi:%p\n",ptr);
+//	printf("ptr degiskeninin adresi:%p\n",&ptr);
+//}
+
+////ADRES OPERATÖRÜ (DİZİLER)
+//#include<stdio.h>
+//int main()
+//{
+//	int s[5]={1,2,3,4,5};
+//	int *ptr;
+//	ptr=s;
+//	printf("s dizisinin adresi:%p\n",s);
+//	printf("s dizisinin ilk elemaninin adresi:%p\n",&s[0]);
+//	printf("s dizisinin 1. elemaninin adresi:%p\n",&s[1]);
+//	printf("ptr degiskeninin icerigi:%p\n",ptr);
+//}
+
+
+////* OPERATÖRÜ 1
+//#include <stdio.h>
+//int main()
+//{
+//	int x=100;
+//	int *ptr;
+//	ptr=&x;
+//	int y=*ptr;
+//	printf("x degiskeninin degeri:%d\n",x);
+//	printf("x degiskeninin adresi:%p\n",ptr);
+//	printf("y degiskeninin degeri:%d\n",y);
+//}
+
+////* OPERATÖRÜ 2
+//#include <stdio.h>
+//int main()
+//{
+//	char s[] = "Deneme";	
+//	int a[] = {1, 2, 3, 4, 5};
+//	int x = 10;
+//	int *ptr;
+//	putchar(*s);
+//	printf("\n%d\n", *a);
+//	x=*&x;
+//	printf("x = %d\n", x);
+//	ptr = &x;
+//	*ptr = 30;
+//	printf("x = %d\n", x);
+//	return 0;
+//}
+
+////* OPERATÖRÜ 3
+//#include <stdio.h>
+//int main()
+//{
+//	int s[] = {1,2,3,4,5};	
+//	printf("s dizinin baslangic adresi:%p\n",s);
+//	printf("s dizinin ilk degeri:%d\n",*s);
+//	//* operatörü ile dizinin ilk elemanı alınır, ve toplama yapılır
+//	printf("s dizinin ilk degeri 10 artirildi:%d\n",*s+10);
+//	//dizinin baslangic adresi 1 artirilir ve icerigi yazilir.
+//	printf("s dizinin ikinci degeri:%d\n",*(s+1));
+//	printf("s dizinin ilk degeri 5 ile carpildi:%d\n",*s*5);
+//}
+
+
+////İNDEX OPERATÖRÜ 
+//#include <stdio.h>
+//int main()
+//{
+//	int s[] = {1,2,3,4,5};
+//	int *p,i;
+//	p=s;
+//	for (i=0;i<5;i++)
+//	{
+//		printf("%d-",s[i]);
+//	}
+//	printf("\n");
+//	for (i=0;i<5;i++)
+//	{
+//		p[i]=0;
+//		printf("%d-",s[i]);
+//	}
+//}
+
+////POINTER ARTIRMA VE AZALTMA 
+//#include <stdio.h>
+//int main()
+//{
+//	int s[] = {10,20,30,40,50};
+//	int *p=s;
+//	printf("Dizinin baslangic adresi: %p\n",s);
+//	printf("Dizinin baslangic adresindeki degeri al, yazdir ve 1 artir: %d\n",*p++);
+//	p=s;
+//	printf("Dizinin baslangic adresini 1 artir, icerigini al ve yazdir: %d\n",*++p);
+//	p=s;
+//	printf("Dizinin baslangic adresindeki degeri al, 1 artir ve yazdir: %d\n",++*p);
+//}
+
+////FONKSİYON PARAMETRESİ OLARAK POİNTER 
+//#include <stdio.h>
+//void swap(int *x, int *y)
+//{
+//	int temp;
+//	temp=*x;
+//	*x=*y;
+//	*y=temp;
+//} main()
+//{
+//	int a=10, b=20;
+//	swap(&a,&b);
+//	printf("a=%d b=%d",a,b);
+//}
+
+////FONKSİYON PARAMETRESİ OLARAK DİZİ ADRESİ 
+//#include <stdio.h>
+//int max(int *p, int n)
+//{
+//	int maxval,i;
+//	maxval=p[0];
+//	for (i=1;i<n;i++)
+//	{
+//		if (maxval<p[i])
+//			maxval=p[i];
+//	}
+//	return maxval;
+//} 
+//main()
+//{
+//	int a[10]={10,-4,5,9,71,98,89,4,8,10};
+//	int m;
+//	m=max(a,10);
+//	printf("En buyuk sayi:%d\n",m);
+//}
+
+
+//FONKSİYON PARAMETRESİ OLARAK DİZİ ADRESİ 
+#include <stdio.h>
+void yerlestir(int *p, int n)
+{
+	int bas=0,son=n-1,tmp;
+	while(son>bas)
+	{
+		if (*(p+bas)<0)
+		{
+			tmp=*(p+son);
+			*(p+son)=*(p+bas);
+			*(p+bas)=tmp;
+			son--;
+		}
+		else
+		{
+			bas++;
+		}
+	}
+	
+} 
+main()
+{
+	int a[10]={1,2,-3,4,-5,-6,7,8,-9,10};
+	int *ptr,i;
+	ptr=a;
+	yerlestir(ptr,10);
+	for (i=0;i<10;i++)
+	{
+		printf("%d,",*(a+i));
+	}
+}
+
+
+
+

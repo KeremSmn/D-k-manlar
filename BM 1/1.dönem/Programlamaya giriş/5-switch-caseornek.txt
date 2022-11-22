@@ -1,0 +1,110 @@
+//#include<stdio.h>
+//int main()
+//{
+//	int ay;
+//	printf("Ay bilgisi girin\n");
+//	scanf("%d",&ay);
+//	switch(ay)
+//	{
+//		case 1:printf("Ocak");break;
+//		case 2:printf("Subat");break;
+//		case 3:printf("Mart");break;
+//		case 4:printf("Nisan");break;
+//		case 5:printf("Mayis");break;
+//		case 6:printf("Haziran");break;
+//		case 7:printf("Temmuz");break;
+//		case 8:printf("Agustos");break;
+//		case 9:printf("Eylul");break;
+//		case 10:printf("Ekim");break;
+//		case 11:printf("Kasim");break;
+//		case 12:printf("Aralik");break;
+//		default: printf("Yanlis sayi girdiniz");break;
+//	}
+//}
+
+//#include<stdio.h>
+//int main()
+//{
+//	int sayi;
+//	printf("Bir sayi girin\n");
+//	scanf("%d",&sayi);
+//	int x=5;
+//	switch(sayi)
+//	{
+//		case 1:printf("Bir\n");
+//		case 2:printf("Ýki\n");break;
+//		case 3:printf("Uc\n");
+//		case 4:printf("Dort\n");break;
+//		case 5:printf("Bes\n");
+//		default: printf("Tanimli degil");
+//	}
+//}
+
+
+//#include<stdio.h>
+//int main()
+//{
+//	int sayi;
+//	printf("Bir sayi girin\n");
+//	scanf("%d",&sayi);
+//	if (sayi==1)
+//		printf("Bir");
+//	else if (sayi==2)
+//		printf("Ýki");
+//	else if (sayi==3)
+//		printf("Uc");
+//	else if (sayi==4)
+//		printf("Dort");
+//	else if (sayi==5)
+//		printf("Bes");
+//	else
+//		printf("Tanimli degil");
+//}
+
+////SONUC?
+//#include<stdio.h>
+//int main()
+//{
+//	int a;
+//	printf("a degerini girin:\n");
+//	scanf("%d",&a);
+//	switch(a)
+//	{
+//		case 3>2:printf("Bir\n");break;
+//		case 4:printf("dort\n");
+//		default: printf("Bitti\n");
+//		case 2:printf("iki\n");break;
+//		case 3:printf("uc\n");		
+//	}
+//}
+
+//#include<stdio.h>
+//int main()
+//{
+//	int gun,kalan;
+//	printf ("Kacinci gun?");
+//	scanf("%d",&gun);
+//	kalan=gun%7;
+//	switch(kalan)
+//	{
+//		case 0:printf("Pazartesi\n");break;
+//		case 1:printf("Sali\n");break;
+//		case 2:printf("Carsamba\n");break;
+//		case 3:printf("Persembe\n");break;
+//		case 4:printf("Cuma\n");break;
+//		case 5:printf("Cumartesi\n");break;
+//		case 6:printf("Pazar\n");break;
+//	}
+//}
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	char x[]="cghty";
+	printf ("%c",x);
+	
+}
+
+
+
